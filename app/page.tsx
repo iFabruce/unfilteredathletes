@@ -1,113 +1,73 @@
+'use client'
 import Image from 'next/image'
+import {Button} from "@nextui-org/react";
+
+import { initFlowbite } from 'flowbite'
+import { useEffect } from 'react';
+
 
 export default function Home() {
+  useEffect(() => {
+      initFlowbite();
+    }, []);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className=''>
+      <div className='md:bg-gradient-to-r sm:bg-gradient-to-b from-black from-10%  to-[#1e1e1e] to-90% h-screen  md:px-24 sm:px-12' >
+        <nav className=" border-gray-200 dark:bg-gray-900">
+          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-6">
+            <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                <Image src="/images/Logo.png" className="" width={128} height={128} alt="Unfiltered Athletes Logo" />
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-start p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span className="sr-only">Open main menu</span>
+                <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <div className="hidden w-full md:block md:w-auto " id="navbar-default">
+              <ul className="font-medium flex flex-col p-4 md:p-0 md:space-y-0 sm:space-y-4 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0   dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li className='text-white rounded-md hover:text-prim duration-400 ease-out '>
+                  <a href="#" className="block py-3 px-6" aria-current="page">Home</a>
+                </li>
+                <li className='text-white rounded-md hover:text-prim duration-400 ease-out '>
+                  <a href="#" className="block py-3 px-6">About</a>
+                </li>
+                <li className='text-white rounded-md hover:text-prim duration-400 ease-out '>
+                  <a href="#" className="block py-3 px-6">Podcast</a>
+                </li>
+                <li className='text-white rounded-md hover:text-prim duration-400 ease-out '>
+                  <a href="#" className="block py-3 px-6">Athletes</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div className='md:mt-16 sm:mt-8 grid md:grid-cols-12 sm:grid-rows-12 sm:space-y-8 md:space-y-0 '>
+          <div className='md:col-span-7 sm:row-span-6 md:w-10/12 sm:w-full '>
+            <span><Image className='sm:w-8 md:w-16' src="/icons/solar_microphone-outline.svg" width={48} height={48} alt="microphone"/></span>
+            <h1 className='text-white font-title md:text-8xl sm:text-4xl '>Meet the people behind the <span className='text-prim '>Athletes</span> you see on TV</h1>
+            <p className='text-white text-xl font-medium mt-4 '>Amazing Canadian athletes share all their secrets</p>
+            <div className='flex md:flex-row sm:flex-col md:space-x-4 sm:space-y-4 md:space-y-0 mt-8'>
+              <Button className='bg-spotify px-6 py-6'>Listen to podcast</Button>
+              <Button className='text-white bg-sec px-6 py-6'>Discover athletes</Button>
+            </div>
+          </div>
+
+          <div className='md:col-span-5 sm:row-span-6   '>
+            <div className="grid grid-cols-4 grid-rows-5 gap-4">
+                <div className="col-span-2 row-span-5 z-0 hover:z-40"><Image className=' hover-bright md:filter blur-sm sm:blur-none hover:blur-none hover:scale-110  duration-200 ease-in rounded-xl object-cover w-full h-full' src="/images/ep27.jpeg" width={2000} height={2000} alt="microphone"/></div>
+                <div className="col-span-2 row-span-3 col-start-3 z-10 hover:z-40"><Image className=' hover-bright md:filter blur-sm sm:blur-none hover:blur-none hover:scale-110   hover:z-10 duration-200 ease-in rounded-xl object-cover w-full h-full' src="/images/ep1.jpg" width={2000} height={2000} alt="microphone"/></div>
+                <div className="row-span-2 col-start-3 row-start-4 z-20 hover:z-40 "><Image className=' hover-bright md:filter blur-sm sm:blur-none hover:blur-none hover:scale-110   hover:z-10 duration-200 ease-in rounded-xl object-cover w-full h-full' src="/images/ep2.jpeg" width={2000} height={2000} alt="microphone"/></div>
+                <div className="row-span-2 col-start-4 row-start-4 z-30 hover:z-40"><Image className=' hover-bright md:filter blur-sm sm:blur-none hover:blur-none hover:scale-110   hover:z-10 duration-200 ease-in rounded-xl object-cover w-full h-full' src="/images/ep3.jpeg" width={2000} height={2000} alt="microphone"/></div>
+            </div>
+          </div>     
+    
         </div>
       </div>
+      
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
   )
 }
