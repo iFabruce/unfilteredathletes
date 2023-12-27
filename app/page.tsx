@@ -12,6 +12,7 @@ export default function Home() {
     }, []);
   return (
     <main className=''>
+      {/*************************BEGIN HERO SECTION************************/}
       <div className='md:bg-gradient-to-r sm:bg-gradient-to-b from-black from-10%  to-[#1e1e1e] to-90% h-screen  md:px-24 sm:px-12' >
         <nav className=" border-gray-200 dark:bg-gray-900">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-6">
@@ -62,11 +63,51 @@ export default function Home() {
                 <div className="row-span-2 col-start-4 row-start-4 z-30 hover:z-40"><Image className=' hover-bright md:filter blur-sm sm:blur-none hover:blur-none hover:scale-110   hover:z-10 duration-200 ease-in rounded-xl object-cover w-full h-full' src="/images/ep3.jpeg" width={2000} height={2000} alt="microphone"/></div>
             </div>
           </div>     
-    
         </div>
       </div>
+      {/*************************END HERO SECTION************************/}
       
+      {/*************************BEGIN ABOUT SECTION************************/}
+      <div className='md:px-24 sm:px-12 md:py-16 sm:py-8 md:h-screen bg-gray-200 '>
+        <div>
+          <h2 className='font-title md:text-6xl sm:text-4xl sm:text-center md:text-left bg-prim px-8 py-4 text-white shadow-custom'>About</h2>
+        </div>
+       
+        <div className='grid md:grid-cols-12 md:space-x-16 sm:grid-rows-12 md:mt-24 sm:mt-8 '>
+          <div className='md:col-span-4 sm:row-span-4 flex sm:items-center'>
+            <iframe className="border-radius:12px" src="https://open.spotify.com/embed/episode/2xlmvwndthFk7t9RV5MNn9?utm_source=generator" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div className='md:col-span-8 sm:row-span-8'>
+            <p className='text-lg leading-loose text-sec'>Unfiltered Athletes goes behind the scenes with <strong>world class athletes</strong> , to reveal the  <strong>untold stories</strong> of their journeys. From gruelling training sessions to mental strategies to achieve greatness, get ready for a raw, unfiltered look at the world of sports.
+Guests include: <strong>Aaron Brown</strong> (4x100m world champion), <strong>oel Anthony</strong>J (NBA), <strong>Sage Watson</strong> (400m hurdles), <strong>Laurence St-Germain (ski slalom)</strong>, <strong>Nick Wammes</strong> (track cycling), <strong>Shady El Nahas</strong> (Judo), <strong>Phylicia George</strong> (100m hurdles and bobsleigh)
+If you want to know every time a new episode is released, follow the podcast on the platform you’re reading this! </p><br />
+            
+          <Button className='bg-spotify px-6 py-6 uppercase '>Listen to podcast</Button> <br />
+          <div className='flex space-x-4 items-center mt-4'>
+            <p className='font-semibold  tracking-wide text-sm text-prim'>Follow us on:</p>
+            <a href="https://www.instagram.com/unfiltered.athletes/"><Image className='hover:-translate-y-1.5 duration-200 ease-out' src="/icons/linkedin.png" width={24} height={32} alt=""/></a>
+            <a href="https://www.youtube.com/@unfilteredathletes"><Image className='hover:-translate-y-1.5 duration-200 ease-out' src="/icons/youtube.png" width={32} height={32} alt=""/></a>
+          </div> 
+          </div>
+        </div>
+        
+      </div>
+      {/*************************END ABOUT SECTION************************/}
+      <div className='md:px-24 sm:px-12 grid md:grid-cols-12 md:space-x-32 md:space-y-0 sm:space-y-8 bg-gradient-to-tr from-black from-25% to-prim to-25% p-16' >
+        <div className='md:col-span-6 sm:row-span-6'>
+          <iframe src="https://open.spotify.com/embed/episode/3QLhlCgirc7uqKHn0OIxqW?utm_source=generator&theme=0" width="100%" height="352"   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div className='md:col-span-6 sm:row-span-6'>
+          <div className='grid grid-rows-12 md:space-y-8 sm:space-y-2'>
+            <iframe className="row-span-6 border-radius:12px" src="https://open.spotify.com/embed/episode/5MZbvoKXh5YLLO99bzz3Ok?utm_source=generator&theme=0" width="100%" height="152"  allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe className="row-span-6 border-radius:12px" src="https://open.spotify.com/embed/episode/78O9oNg1pGwJRROs4B7PPL?utm_source=generator&theme=0" width="100%" height="152" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
 
+      <div className='md:px-24 sm:px-12 mt-16'>
+        <h2 className='text-6xl font-title'>Follow us on Instagram for upcoming teasers</h2>
+      </div>
 
     </main>
   )
